@@ -6,8 +6,6 @@ import "../interfaces/AddressUtils.sol";
 import "../interfaces/IERC721Metadata.sol";
 
 contract Erc721 is IErc721, IERC721Metadata {
-    using AddressUtils for address;
-
     string constant NOT_OWNER_OR_OPERATOR = "You are not owner or operator of token";
     string constant NOT_OWNER_APPROVED_OR_OPERATOR = "You dont have permission to transfer";
     string constant NOT_VALID_TOKEN = "Not a valid token";
@@ -147,9 +145,6 @@ contract Erc721 is IErc721, IERC721Metadata {
         require(_to != address(0), ZERO_ADDRESS);
 
         _transfer(_to, _tokenId);
-        if(_to.isContract()) {
-//            bytes4 val = Erc721
-        }
     }
 
     function _transfer(address _to, uint256 _tokenId) internal virtual validToken(_tokenId) {
