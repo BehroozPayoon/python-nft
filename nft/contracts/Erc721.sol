@@ -2,7 +2,6 @@
 pragma solidity ^0.8.0;
 
 import "../interfaces/IErc721.sol";
-import "../interfaces/AddressUtils.sol";
 import "../interfaces/IERC721Metadata.sol";
 
 contract Erc721 is IErc721, IERC721Metadata {
